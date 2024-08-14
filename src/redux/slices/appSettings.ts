@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import colors from "../../appStyles/colors";
 import fontFamily from "../../appStyles/fontFamily";
-// import {fontTypes} from "../../utils/interfaces";
+import {appSettings as app} from "../../utils/interfaces";
 
-const initialState=<fontTypes> {
+const initialState=<app.appMainSettings> {
   fontFamily: fontFamily,
   themes:[colors],
   appTheme:colors
@@ -13,7 +13,7 @@ const appSettings = createSlice({
   name: "appSettings",
   initialState,
   reducers: {
-    setApp: (state) => {
+    setApp: (state:app.appMainSettings) => {
       state.fontFamily=state?.fontFamily;
       state.themes=state?.themes;
       (state?.themes?.length>0)&&(state.appTheme=state?.themes[0]);

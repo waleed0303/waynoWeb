@@ -1,3 +1,3 @@
+import * as appSettings  from "./appSettings";
 
-
-// export { default as appStyle } from "./appSettings";
+export {appSettings}

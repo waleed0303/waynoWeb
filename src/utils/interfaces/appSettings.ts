@@ -9,8 +9,9 @@ export interface colorTypes{
     secondaryColor: String,
     tirtaryColor:String,
 }
-export interface appSettings {
+export interface appMainSettings {
     fontFamily: fontTypes;
     themes: colorTypes[];
     appTheme:colorTypes
   }
+  
