@@ -1,17 +1,19 @@
 export interface fontTypes{
-    regular: String,
-    bold: String,
-    medium:String,
+    regular: string,
+    bold: string,
+    semiBold:string,
+    medium:string,
 }
 export interface colorTypes{
     id:any,
-    primaryColor: String,
-    secondaryColor: String,
-    tirtaryColor:String,
+    primaryColor: string,
+    secondaryColor: string,
+    tirtaryColor:string,
 }
 export interface appMainSettings {
     fontFamily: fontTypes;
     themes: colorTypes[];
-    appTheme:colorTypes
+    themeColors:colorTypes
+    fontFamilies:fontTypes[]
   }
   

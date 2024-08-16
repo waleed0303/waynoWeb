@@ -4,21 +4,26 @@ import fontFamily from "../../appStyles/fontFamily";
 import {appSettings as app} from "../../utils/interfaces";
 
 const initialState=<app.appMainSettings> {
-  fontFamily: fontFamily,
-  themes:[colors],
-  appTheme:colors
+  fontFamily: fontFamily, //selected font 
+  fontFamilies:[fontFamily], //list of fonts 
+
+
+  
+  themes:[colors],  //list of color themes objects 
+  themeColors:colors //selected color object 
 };
 
 const appSettings = createSlice({
   name: "appSettings",
   initialState,
   reducers: {
-    setApp: (state:app.appMainSettings) => {
-      state.fontFamily=state?.fontFamily;
-      state.themes=state?.themes;
-      (state?.themes?.length>0)&&(state.appTheme=state?.themes[0]);
+    setApp: (state:app.appMainSettings, action) => {
+      state.fontFamilies=action?.payload?.fontFamilies?action?.payload?.fontFamilies:[fontFamily];
+      state.fontFamily=action?.payload?.fontFamily?action?.payload?.fontFamily:fontFamily;
+      state.themes=action?.payload?.themes?action?.payload?.themes:[colors];
+      state.themeColors=(action?.payload?.themes?.length>0)?action?.payload?.themes[0]:colors;
     },
-  },
+  },  
 });
 
 export default appSettings.reducer;

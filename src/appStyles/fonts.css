@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../assets/fonts/bold-font.ttf') format('ttf'),
+        url('../assets/fonts/SFProText-SemiBold.ttf') format('ttf'),
+         url('../assets/fonts/SFProText-Medium.ttf') format('ttf'),
+         url('../assets/fonts/SFProText-Regular.ttf') format('ttf');
+         
+    font-weight: normal;
+    font-style: normal;
+  }

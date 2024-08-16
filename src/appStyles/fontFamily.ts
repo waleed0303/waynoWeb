@@ -1,13 +1,7 @@
 export default {
-  regular: 'SFProText-Regular',
-  bold:'SFProText-Bold',
-  medium: 'Futura-Medium',
-  futuraHeavyBt: 'Futura Hv BT',
-  futuraBtHeavy: 'FuturaBT-Heavy',
-  futuraBook: 'Futura-Book',
-  futura: 'Futura-Normal',
-  semiBold: 'SFProText-SemiBold',
-  circularRegular:'CircularStd-Book',
-  circularMedium: 'CircularStd-Medium',
-  circularBold: 'CircularStd-Bold',
+  id:0,
+  bold:'bold-font.ttf',
+  semiBold:'SFProText-SemiBold.ttf',
+  medium: 'SFProText-Medium.ttf',
+  regular: 'SFProText-Regular.ttf'
 };

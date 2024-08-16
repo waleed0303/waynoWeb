@@ -1,0 +1,4 @@
+.bigblue {
+    color: var(--app-color-primary);
+    font-family:var(--dynamic-font);
+} 

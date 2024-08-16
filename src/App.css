@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,14 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
+/* :root {
+  --app-font: var(--app-font-bold);
+} */
+/* .bigblue {
+  color: var(--app-color-primary);
+  padding: 40px;
+  font-family:var(--app-font-bold);
+  text-align: center;
+}  */
