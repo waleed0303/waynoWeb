@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setApp } from "../../redux/slices/appSettings";
 import { appSettings as app } from "../../utils/interfaces";
+import fonts from "../../assets/fonts";
 import styles from "./styles.module.css";
 
 const NavBar = (props: any) => {
@@ -13,15 +14,37 @@ const NavBar = (props: any) => {
   );
 
   useEffect(() => {
-    document.documentElement.style.setProperty("--dynamic-font", _font.bold);
-    document.documentElement.style.setProperty("--app-font-bold", _font.bold);
+    document.documentElement.style.setProperty(
+      "--app-font-bold",
+      fonts?.family?.bold
+    );
     document.documentElement.style.setProperty(
       "--app-font-regular",
-      _font.regular
+      fonts?.family?.semiBold
+    );
+    document.documentElement.style.setProperty(
+      "--app-font-regular",
+      fonts?.family?.medium
     );
     document.documentElement.style.setProperty(
       "--app-font-medium",
-      _font.medium
+      fonts?.family?.regular
+    );
+    document.documentElement.style.setProperty(
+      "--app-font-bold-weight",
+      fonts?.weights?.bold
+    );
+    document.documentElement.style.setProperty(
+      "--app-font-regular-weight",
+      fonts?.weights?.semiBold
+    );
+    document.documentElement.style.setProperty(
+      "--app-font-regular-weight",
+      fonts?.weights?.medium
+    );
+    document.documentElement.style.setProperty(
+      "--app-font-medium-weight",
+      fonts?.weights?.regular
     );
 
     document.documentElement.style.setProperty(
@@ -36,7 +59,7 @@ const NavBar = (props: any) => {
       "--app-color-tirtary",
       _colors.tirtaryColor
     );
-  }, [_font]);
+  });
 
   const handleFontChange = (event: any) => {
     // setApp(setFont(event.target.value));

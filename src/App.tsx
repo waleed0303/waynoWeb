@@ -3,7 +3,6 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 
 import NavBar from "./componnets/navBar/navBar";
-import "./App.css";
 
 function App() {
   return (

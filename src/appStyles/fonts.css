@@ -1,10 +1,23 @@
 @font-face {
-    font-family: 'CustomFont';
-    src: url('../assets/fonts/bold-font.ttf') format('ttf'),
-        url('../assets/fonts/SFProText-SemiBold.ttf') format('ttf'),
-         url('../assets/fonts/SFProText-Medium.ttf') format('ttf'),
-         url('../assets/fonts/SFProText-Regular.ttf') format('ttf');
-         
-    font-weight: normal;
-    font-style: normal;
+    font-family: BoldFont;
+    font-weight: 700;
+    src: url('../assets/fonts/SFProText-Bold.ttf')
+  }
+
+  @font-face {
+    font-family: SemiBold;
+    font-weight: 500;
+    src: url('../assets/fonts/SFProText-SemiBold.ttf')
+  }
+
+  @font-face {
+    font-family: MediumBold;
+    font-weight: 400;
+    src: url('../assets/fonts/SFProText-Medium.ttf')
+  }
+
+  @font-face {
+    font-family: Regularfont;
+    font-weight: 300;
+    src: url('../assets/fonts/SFProText-Regular.ttf')
   }
