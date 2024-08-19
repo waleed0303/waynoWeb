@@ -1,16 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import colors from "../../appStyles/colors";
-import fontFamily from "../../appStyles/fontFamily";
+import { colors, fonts } from "../../utils/staticText";
 import {appSettings as app} from "../../utils/interfaces";
 
 const initialState=<app.appMainSettings> {
-  fontFamily: fontFamily, //selected font 
-  fontFamilies:[fontFamily], //list of fonts 
+  fontFamily: fonts?.primaryFont, //selected font 
+  fontFamilies:[fonts?.primaryFont], //list of fonts 
 
 
   
-  themes:[colors],  //list of color themes objects 
-  themeColors:colors //selected color object 
+  themes:[colors?.primaryTheme],  //list of color themes objects 
+  themeColors:colors?.primaryTheme //selected color object 
 };
 
 const appSettings = createSlice({
@@ -18,13 +17,19 @@ const appSettings = createSlice({
   initialState,
   reducers: {
     setApp: (state:app.appMainSettings, action) => {
-      state.fontFamilies=action?.payload?.fontFamilies?action?.payload?.fontFamilies:[fontFamily];
-      state.fontFamily=action?.payload?.fontFamily?action?.payload?.fontFamily:fontFamily;
+      state.fontFamilies=action?.payload?.fontFamilies?action?.payload?.fontFamilies:[fonts?.primaryFont];
+      state.fontFamily=action?.payload?.fontFamily?action?.payload?.fontFamily:fonts?.primaryFont;
       state.themes=action?.payload?.themes?action?.payload?.themes:[colors];
       state.themeColors=(action?.payload?.themes?.length>0)?action?.payload?.themes[0]:colors;
+    },
+    updateFont: (state:app.appMainSettings, action) => {
+      state.fontFamily=action?.payload?.fontFamily?action?.payload?.fontFamily:colors?.primaryTheme;
+    },
+    updateColor: (state:app.appMainSettings, action) => {
+      state.themeColors=action?.payload?.themeColors?action?.payload?.themeColors:colors;
     },
   },  
 });
 
 export default appSettings.reducer;
-export const {setApp} = appSettings.actions;
+export const {setApp, updateFont, updateColor} = appSettings.actions;

@@ -1,23 +1,55 @@
 @font-face {
-    font-family: BoldFont;
+    font-family: "BoldFont";
     font-weight: 700;
     src: url('../assets/fonts/SFProText-Bold.ttf')
   }
 
   @font-face {
-    font-family: SemiBold;
+    font-family: "SemiBold";
     font-weight: 500;
     src: url('../assets/fonts/SFProText-SemiBold.ttf')
   }
 
   @font-face {
-    font-family: MediumBold;
+    font-family: "MediumFont";
     font-weight: 400;
     src: url('../assets/fonts/SFProText-Medium.ttf')
   }
 
   @font-face {
-    font-family: Regularfont;
+    font-family: "Regularfont";
     font-weight: 300;
     src: url('../assets/fonts/SFProText-Regular.ttf')
+  }
+
+
+  @font-face {
+    font-family: "BoldArabic";
+    font-weight: 700;
+    src: url('../assets/fonts/Pacifico.ttf')
+  }
+
+  @font-face {
+    font-family: "SemiBoldArabic";
+    font-weight: 500;
+    src: url('../assets/fonts/GreatVibes-Regular.otf')
+  }
+
+  @font-face {
+    font-family: "MediumFontArabic";
+    font-weight: 400;
+    src: url('../assets/fonts/SFProText-Medium.ttf')
+  }
+
+  @font-face {
+    font-family: "RegularfontArabic";
+    font-weight: 300;
+    src: url('../assets/fonts/SFProText-Regular.ttf')
+  }
+
+
+
+
+  body {
+    font-family: "MediumFont", "BoldFont", "SemiBold", "Regularfont", "BoldArabic", "SemiBoldArabic",  "MediumFontArabic", "RegularfontArabic"
   }
