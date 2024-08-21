@@ -3,3 +3,18 @@
     font-family:var(--app-font-bold);
     font-weight:var(--app-font-bold-weight);
 } 
+.bigblue1 {
+    color: var(--app-color-primary);
+    font-family:var(--app-font-semiBold);
+    font-weight:var(--app-font-semiBold-weight);
+} 
+.bigblue2 {
+    color: var(--app-color-primary);
+    font-family:var(--app-font-medium);
+    font-weight:var(--app-font-medium-weight);
+} 
+.bigblue3 {
+    color: var(--app-color-primary);
+    font-family:var(--app-font-regular);
+    font-weight:var(--app-font-regular-weight);
+} 

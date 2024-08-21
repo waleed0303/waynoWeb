@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { colors, fonts } from "../../utils/staticText";
 import {appSettings as app} from "../../utils/interfaces";
+import {urls} from "../../config";
 
 const initialState=<app.appMainSettings> {
   fontFamily: fonts?.primaryFont, //selected font 

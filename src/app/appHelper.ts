@@ -8,15 +8,15 @@ const { dispatch } = store;
 export const setTheme = (_font:any, _color:any)=>{
     document.documentElement.style.setProperty("--app-font-bold", _font?.bold);
     document.documentElement.style.setProperty(
-      "--app-font-regular",
+      "--app-font-semiBold",
       _font?.semiBold
     );
     document.documentElement.style.setProperty(
-      "--app-font-regular",
+      "--app-font-medium",
       _font?.medium
     );
     document.documentElement.style.setProperty(
-      "--app-font-medium",
+      "--app-font-regular",
       _font?.regular
     );
     document.documentElement.style.setProperty(
@@ -24,15 +24,15 @@ export const setTheme = (_font:any, _color:any)=>{
       _font?.weight?.bold
     );
     document.documentElement.style.setProperty(
-      "--app-font-regular-weight",
+      "--app-font-semiBold-weight",
       _font?.weight?.semiBold
     );
     document.documentElement.style.setProperty(
-      "--app-font-regular-weight",
+      "--app-font-medium-weight",
       _font?.weight?.medium
     );
     document.documentElement.style.setProperty(
-      "--app-font-medium-weight",
+      "--app-font-regular-weight",
       _font?.weight?.regular
     );
 
