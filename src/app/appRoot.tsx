@@ -19,8 +19,9 @@ function App() {
   }, [appSettings?.fontFamily, appSettings?.themeColors]);
 
   return (
-    <div className="container-fluid">
+    <div className="">
       <NavBar />
+      {/* 
       <ul id={"select"}>
         {appSettings?.fontFamilies?.map((item: _interface.fontTypes) => {
           return (
@@ -29,7 +30,7 @@ function App() {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
     </div>
   );
 }
