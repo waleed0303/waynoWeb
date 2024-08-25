@@ -4,51 +4,63 @@ import { updateFont, setApp } from "../redux/slices/appSettings";
 import store from "../redux/store";
 const { dispatch } = store;
 
+export const setTheme = (_font: any, _color: any) => {
+  document.documentElement.style.setProperty("--app-font-bold", _font?.bold);
+  document.documentElement.style.setProperty(
+    "--app-font-semiBold",
+    _font?.semiBold
+  );
+  document.documentElement.style.setProperty(
+    "--app-font-medium",
+    _font?.medium
+  );
+  document.documentElement.style.setProperty(
+    "--app-font-regular",
+    _font?.regular
+  );
+  document.documentElement.style.setProperty(
+    "--app-font-bold-weight",
+    _font?.weight?.bold
+  );
+  document.documentElement.style.setProperty(
+    "--app-font-semiBold-weight",
+    _font?.weight?.semiBold
+  );
+  document.documentElement.style.setProperty(
+    "--app-font-medium-weight",
+    _font?.weight?.medium
+  );
+  document.documentElement.style.setProperty(
+    "--app-font-regular-weight",
+    _font?.weight?.regular
+  );
 
-export const setTheme = (_font:any, _color:any)=>{
-    document.documentElement.style.setProperty("--app-font-bold", _font?.bold);
-    document.documentElement.style.setProperty(
-      "--app-font-semiBold",
-      _font?.semiBold
-    );
-    document.documentElement.style.setProperty(
-      "--app-font-medium",
-      _font?.medium
-    );
-    document.documentElement.style.setProperty(
-      "--app-font-regular",
-      _font?.regular
-    );
-    document.documentElement.style.setProperty(
-      "--app-font-bold-weight",
-      _font?.weight?.bold
-    );
-    document.documentElement.style.setProperty(
-      "--app-font-semiBold-weight",
-      _font?.weight?.semiBold
-    );
-    document.documentElement.style.setProperty(
-      "--app-font-medium-weight",
-      _font?.weight?.medium
-    );
-    document.documentElement.style.setProperty(
-      "--app-font-regular-weight",
-      _font?.weight?.regular
-    );
+  document.documentElement.style.setProperty(
+    "--app-color-primary",
+    _color.primaryColor
+  );
+  document.documentElement.style.setProperty(
+    "--app-color-secondary",
+    _color.secondaryColor
+  );
+  document.documentElement.style.setProperty(
+    "--app-color-tirtary",
+    _color.tirtaryColor
+  );
 
-    document.documentElement.style.setProperty(
-      "--app-color-primary",
-      _color.primaryColor
-    );
-    document.documentElement.style.setProperty(
-      "--app-color-secondary",
-      _color.secondaryColor
-    );
-    document.documentElement.style.setProperty(
-      "--app-color-tirtary",
-      _color.tirtaryColor
-    );
-}
+  document.documentElement.style.setProperty(
+    "--app-color-white",
+    _color.whiteColor
+  );
+  document.documentElement.style.setProperty(
+    "--app-color-black",
+    _color.blackColor
+  );
+  document.documentElement.style.setProperty(
+    "--app-color-offWhite",
+    _color.offWhite
+  );
+};
 export const setDefaultFonts = () => {
   let fontFamilies: _interface.fontTypes[] = [
     fonts?.primaryFont,
