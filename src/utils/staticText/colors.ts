@@ -7,7 +7,7 @@ const primaryTheme: colorTypes = {
   tirtaryColor: "#E3EDFF",
   whiteColor: "#fff",
   blackColor: "#000000",
-  offWhite: "#FAF9F6",
+  offWhite: "#f3f7f9",
 };
 const secondaryTheme: colorTypes = {
   id: 0,
@@ -16,7 +16,7 @@ const secondaryTheme: colorTypes = {
   tirtaryColor: "#E3EDFF",
   whiteColor: "#fff",
   blackColor: "#000000",
-  offWhite: "#FAF9F6",
+  offWhite: "#f3f7f9",
 };
 
 export { primaryTheme, secondaryTheme };

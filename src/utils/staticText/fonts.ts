@@ -1,7 +1,23 @@
 import {fontTypes} from "../interfaces/appSettings";
 
+
+
 const primaryFont:fontTypes = {
     id:0,
+    bold:'BoldArabicPoppins',
+    semiBold:'SemiBoldPoppins',
+    medium: 'MediumFontPoppins',
+    regular: 'RegularfontPoppins',
+    weight:{
+        bold:"700",
+        semiBold:"500",
+        medium:"400",
+        regular:"300"
+    }
+}
+
+const secondaryFont:fontTypes = {
+    id:1,
     bold:'BoldFont',
     semiBold:'SemiBold',
     medium: 'MediumBold',
@@ -14,8 +30,8 @@ const primaryFont:fontTypes = {
     }
 }
 
-const secondaryFont:fontTypes = {
-    id: 1,
+const tirtaryFont:fontTypes = {
+    id: 2,
     bold: "BoldArabic",
     semiBold: "SemiBoldArabic",
     medium: "MediumFontArabic",
@@ -28,4 +44,4 @@ const secondaryFont:fontTypes = {
     }
 }
 
-export {primaryFont, secondaryFont}
+export {primaryFont, secondaryFont, tirtaryFont}
