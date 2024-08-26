@@ -20,7 +20,12 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="https://images.wayno.ae/insecure/fit/150/92/sm/0/plain/https://runrunuae-assets.s3.me-central-1.amazonaws.com/Clientlogo/65965c448b897.png"></img>
+        <img
+          src="https://images.wayno.ae/insecure/fit/150/92/sm/0/plain/https://runrunuae-assets.s3.me-central-1.amazonaws.com/Clientlogo/65965c448b897.png"
+          className="photo"
+          width="150"
+          height="30"
+        ></img>
       </div>
 
       <ul className={`navbar-links`}>
@@ -28,7 +33,8 @@ const Navbar = () => {
           <a
             href="#home"
             className={activeLink === "home" ? "active" : ""}
-            onClick={() => handleClick("home")}>
+            onClick={() => handleClick("home")}
+          >
             HOME
           </a>
         </li>
@@ -36,7 +42,8 @@ const Navbar = () => {
           <a
             href="#courier"
             className={activeLink === "courier" ? "active" : ""}
-            onClick={() => handleClick("courier")}>
+            onClick={() => handleClick("courier")}
+          >
             COURIER
           </a>
         </li>
@@ -44,7 +51,8 @@ const Navbar = () => {
           <a
             href="#recoveryPickup"
             className={activeLink === "recoveryPickup" ? "active" : ""}
-            onClick={() => handleClick("recoveryPickup")}>
+            onClick={() => handleClick("recoveryPickup")}
+          >
             RECOVERY & PICKUP
           </a>
         </li>
@@ -52,7 +60,8 @@ const Navbar = () => {
           <a
             href="#contact"
             className={activeLink === "contact" ? "active" : ""}
-            onClick={() => handleClick("contact")}>
+            onClick={() => handleClick("contact")}
+          >
             Contact
           </a>
         </li>
@@ -60,7 +69,8 @@ const Navbar = () => {
           <a
             href="#user"
             className={activeLink === "user" ? "active " : ""}
-            onClick={() => toggleDropdown("user")}>
+            onClick={() => toggleDropdown("user")}
+          >
             <FaUser className="user-icon" />
           </a>
 

@@ -8,6 +8,7 @@ const primaryTheme: colorTypes = {
   whiteColor: "#fff",
   blackColor: "#000000",
   offWhite: "#f3f7f9",
+  greyShade: "#6c757d",
 };
 const secondaryTheme: colorTypes = {
   id: 0,
@@ -17,6 +18,7 @@ const secondaryTheme: colorTypes = {
   whiteColor: "#fff",
   blackColor: "#000000",
   offWhite: "#f3f7f9",
+  greyShade: "#6c757d",
 };
 
 export { primaryTheme, secondaryTheme };

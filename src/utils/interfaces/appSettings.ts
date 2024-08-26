@@ -19,6 +19,7 @@ export interface colorTypes {
   whiteColor?: string;
   blackColor?: string;
   offWhite?: string;
+  greyShade?: string;
 }
 export interface appMainSettings {
   fontFamily?: fontTypes;

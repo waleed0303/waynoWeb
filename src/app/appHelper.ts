@@ -60,6 +60,10 @@ export const setTheme = (_font: any, _color: any) => {
     "--app-color-offWhite",
     _color.offWhite
   );
+  document.documentElement.style.setProperty(
+    "--app-color-greyShade",
+    _color.greyShade
+  );
 };
 export const setDefaultFonts = () => {
   let fontFamilies: _interface.fontTypes[] = [
