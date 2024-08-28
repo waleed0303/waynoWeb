@@ -4,7 +4,7 @@ import { Provider, useSelector, useDispatch } from "react-redux";
 import store from "./redux/store";
 import App from "./app/appRoot";
 import "./appStyles/fonts.css";
-
+import RootNavigator from "./navigator/rootNavigator/rootNavigator";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

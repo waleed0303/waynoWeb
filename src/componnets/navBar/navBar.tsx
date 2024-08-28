@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./Navbar.css"; // Import CSS file for styling
+import "./navbar.css"; // Import CSS file for styling
 import { FaUser, FaChevronDown, FaChevronUp, FaTimes } from "react-icons/fa"; // Import the user icon from Font Awesome
+import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,7 @@ const Navbar = () => {
   const handleClick = (section: any) => {
     setActiveLink(section);
     setIsDropdownOpen(false);
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -25,55 +27,49 @@ const Navbar = () => {
           src="https://images.wayno.ae/insecure/fit/150/92/sm/0/plain/https://runrunuae-assets.s3.me-central-1.amazonaws.com/Clientlogo/66cd80617f1c6.png"
           className="photo"
           width="150"
-          height="30"
-        ></img>
+          height="30"></img>
       </div>
 
       <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
         <li>
-          <a
-            href="#home"
+          <Link
+            to={`/`}
             className={activeLink === "home" ? "active normal" : "normal"}
-            onClick={() => handleClick("home")}
-          >
+            onClick={() => handleClick("home")}>
             HOME
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#courier"
+          <Link
+            to={`courier`}
             className={activeLink === "courier" ? "active normal" : "normal"}
-            onClick={() => handleClick("courier")}
-          >
+            onClick={() => handleClick("courier")}>
             COURIER
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#recoveryPickup"
+          <Link
+            to={`recoverpickup`}
             className={
               activeLink === "recoveryPickup" ? "active normal" : "normal"
             }
-            onClick={() => handleClick("recoveryPickup")}
-          >
+            onClick={() => handleClick("recoveryPickup")}>
             RECOVERY & PICKUP
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#contact"
+          <Link
+            to={`contact`}
             className={activeLink === "contact" ? "active normal" : "normal"}
-            onClick={() => handleClick("contact")}
-          >
+            onClick={() => handleClick("contact")}>
             Contact
-          </a>
+          </Link>
         </li>
         <li>
           <a
             href="#user"
             className={activeLink === "user" ? "active " : ""}
-            onClick={() => toggleDropdown("user")}
-          >
+            onClick={() => toggleDropdown("user")}>
             <FaUser /> <span style={{ marginLeft: 5 }}>Account</span>{" "}
             {isDropdownOpen ? (
               <FaChevronUp style={{ marginLeft: 5 }} />
@@ -85,22 +81,20 @@ const Navbar = () => {
           {isDropdownOpen && (
             <ul className="dropdown-content">
               <li>
-                <a
+                <Link
                   className={activeLink === "login" ? "active " : ""}
-                  href="#web-design"
-                  onClick={() => handleClick("login")}
-                >
+                  to={`signin`}
+                  onClick={() => handleClick("login")}>
                   Login
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className={activeLink === "signup" ? "active " : ""}
-                  href="#web-design"
-                  onClick={() => handleClick("signup")}
-                >
+                  to={`signup`}
+                  onClick={() => handleClick("signup")}>
                   Signup
-                </a>
+                </Link>
               </li>
             </ul>
           )}

@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
-import NavBar from "../componnets/navBar/navBar";
-import { appSettings as _interface } from "../utils/interfaces";
 
+import { appSettings as _interface } from "../utils/interfaces";
+import RootNavigator from "../navigator/rootNavigator/rootNavigator";
 import { setTheme, setDefaultFonts, handleFontChange } from "./appHelper";
 
-function App() {
+function App(router: any) {
   const appSettings: _interface.appMainSettings = useSelector(
     (state: any) => state.appSettings
   );
@@ -20,17 +20,7 @@ function App() {
 
   return (
     <div className="">
-      <NavBar />
-      {/* 
-      <ul id={"select"}>
-        {appSettings?.fontFamilies?.map((item: _interface.fontTypes) => {
-          return (
-            <li key={item?.id} onClick={() => handleFontChange(item)}>
-              {item?.regular}
-            </li>
-          );
-        })}
-      </ul> */}
+      <RootNavigator />
     </div>
   );
 }
