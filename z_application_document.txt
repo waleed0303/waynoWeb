@@ -1,0 +1,36 @@
+Color work and changes in application ... 
+
+1- Add a new color theme in this path (we are using the first object as default in reducer) 
+    src/utils/staticText/colors.ts
+
+2- If adding any new color register the type in  (src/utils/interfaces/appSettings.ts)
+
+3- We are using redux toolkit for using color theme in whole app (src/redux/slices/appSettings.ts)
+
+4- Theme initialization is happinning on this path (src/app/appRoot.tsx)
+
+5- As soon any change happens on fonts or themes setTheme functions automatically calls on route (src/app/appRoot.tsx) which call helper functions of 
+    src/app/appHelper.ts path.
+
+6- color change is being handled on file src/componnets/navBar/navBar.tsx 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1- Add font files links on path (src/appStyles/fonts.css) and name them properly same names we will use in 
+    (src/utils/staticText/fonts.ts)
+
+2- Add a new font theme in this path (we are using the first object as default in reducer) 
+    (src/utils/staticText/fonts.ts)
+
+3- If adding any new font register the type in  (src/utils/interfaces/appSettings.ts)
+
+4- We are using redux toolkit for using fonts in whole app (src/redux/slices/appSettings.ts)
+
+5- Fonts initialization is happinning on this path (src/app/appRoot.tsx)
+
+6- As soon any change happens on fonts or themes setTheme functions automatically calls on route (src/app/appRoot.tsx) which call helper functions of 
+    src/app/appHelper.ts path.
+
+7- Font change is being handled on file src/componnets/navBar/navBar.tsx 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

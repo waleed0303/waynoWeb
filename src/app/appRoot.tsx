@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { appSettings as _interface } from "../utils/interfaces";
 import RootNavigator from "../navigator/rootNavigator/rootNavigator";
-import { setTheme, setDefaultFonts, handleFontChange } from "./appHelper";
+import { setTheme, setDefaultSettings, handleFontChange } from "./appHelper";
 
 function App(router: any) {
   const appSettings: _interface.appMainSettings = useSelector(
@@ -11,7 +11,7 @@ function App(router: any) {
   );
 
   useEffect(() => {
-    setDefaultFonts();
+    setDefaultSettings();
   }, []);
 
   useMemo(() => {

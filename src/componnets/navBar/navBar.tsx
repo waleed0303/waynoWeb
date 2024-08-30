@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useEffect } from "react";
+import { useSelector } from "react-redux";
 import "./navbar.css"; // Import CSS file for styling
-import { FaUser, FaChevronDown, FaChevronUp, FaTimes } from "react-icons/fa"; // Import the user icon from Font Awesome
+import {
+  FaUser,
+  FaChevronDown,
+  FaChevronUp,
+  FaTimes,
+  FaRegUserCircle,
+  FaTh,
+} from "react-icons/fa"; // Import the user icon from Font Awesome
+import { appSettings as _interface } from "../../utils/interfaces";
 import { Outlet, Link } from "react-router-dom";
+import { changeThemeColor, setTheme } from "../../app/appHelper";
 
 const Navbar = () => {
+  const appSettings: _interface.appMainSettings = useSelector(
+    (state: any) => state.appSettings
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
@@ -19,6 +32,16 @@ const Navbar = () => {
     setIsDropdownOpen(false);
     setIsOpen(!isOpen);
   };
+  useEffect(() => {
+    console.log("appSettings?.languages", appSettings?.languages);
+  }, [
+    appSettings?.fontFamily,
+    appSettings?.fontFamilies,
+    appSettings?.themeColors,
+    appSettings?.themes,
+    appSettings?.languages,
+    appSettings?.lang,
+  ]);
 
   return (
     <nav className={`${isOpen ? "navbar" : "navbar"}`}>
@@ -70,12 +93,13 @@ const Navbar = () => {
             href="#user"
             className={activeLink === "user" ? "active " : ""}
             onClick={() => toggleDropdown("user")}>
-            <FaUser /> <span style={{ marginLeft: 5 }}>Account</span>{" "}
-            {isDropdownOpen ? (
+            <FaRegUserCircle size={20} />
+            {/* <span style={{ marginLeft: 5 }}>Account</span>{" "} */}
+            {/* {isDropdownOpen ? (
               <FaChevronUp style={{ marginLeft: 5 }} />
             ) : (
               <FaChevronDown style={{ marginLeft: 5 }} />
-            )}
+            )} */}
           </a>
 
           {isDropdownOpen && (
@@ -96,8 +120,50 @@ const Navbar = () => {
                   Signup
                 </Link>
               </li>
+
+              <li className="nav-item dropdown">
+                <a href="#services">Services</a>
+                <ul className="dropdown-menu-left">
+                  {appSettings?.themes?.map((item: _interface.colorTypes) => {
+                    return (
+                      <li
+                        onClick={() => {
+                          changeThemeColor(item);
+                        }}>
+                        <a href="#web">{item?.name}</a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
             </ul>
           )}
+        </li>
+        <li>
+          <a
+            href="#"
+            className={activeLink === "settings" ? "active normal" : "normal"}
+            onClick={() => handleClick("settings")}>
+            <FaTh style={{ marginLeft: 5 }} />
+          </a>
+
+          <ul className="settings-drop">
+            {appSettings?.languages?.length !== null &&
+              appSettings?.languages?.length !== undefined &&
+              appSettings?.languages?.length > 0 &&
+              appSettings?.languages?.map((item: _interface.langInterface) => {
+                return (
+                  <li>
+                    <Link
+                      className={activeLink === "login" ? "active " : ""}
+                      to={`#`}
+                      onClick={() => handleClick("login")}>
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              })}
+          </ul>
         </li>
       </ul>
       {!isOpen ? (

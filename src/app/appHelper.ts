@@ -1,6 +1,10 @@
 import { appSettings as _interface } from "../utils/interfaces";
-import { colors, fonts } from "../utils/staticText";
-import { updateFont, setApp } from "../redux/slices/appSettings";
+import { colors, fonts, lang } from "../utils/staticText";
+import { updateFont, setApp, updateColor } from "../redux/slices/appSettings";
+// import {en} from "../assets/lang/eng";
+// import {ar} from "../assets/lang/ar";
+import * as en from "../assets/lang/eng";
+import * as ar from "../assets/lang/ar";
 import store from "../redux/store";
 const { dispatch } = store;
 
@@ -65,7 +69,7 @@ export const setTheme = (_font: any, _color: any) => {
     _color.greyShade
   );
 };
-export const setDefaultFonts = () => {
+export const setDefaultSettings = () => {
   let fontFamilies: _interface.fontTypes[] = [
     fonts?.primaryFont,
     fonts?.secondaryFont,
@@ -74,12 +78,22 @@ export const setDefaultFonts = () => {
     colors?.primaryTheme,
     colors?.secondaryTheme,
   ];
+
+  let langAll: _interface.langInterface[] = [
+    en?.en,
+    ar?.ar,
+  ];
   let appStyle: _interface.appMainSettings = {
     fontFamilies: fontFamilies,
     themes: themesAll,
+    languages:langAll
   };
   dispatch(setApp(appStyle));
 };
+export const changeThemeColor = (selColor:_interface.colorTypes) => {
+  dispatch(updateColor(selColor));
+};
+
 export const handleFontChange = (item: _interface.fontTypes) => {
   dispatch(
     updateFont({

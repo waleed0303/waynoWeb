@@ -13,6 +13,7 @@ export interface fontTypes {
 }
 export interface colorTypes {
   id: number;
+  name:string;
   primaryColor: string;
   secondaryColor: string;
   tirtaryColor: string;
@@ -21,9 +22,24 @@ export interface colorTypes {
   offWhite?: string;
   greyShade?: string;
 }
+
+export interface langInterface{
+  id:string|number,
+  name:string,
+  fontIdtoUse:string|number,
+  layout:string,
+  readFrom:{
+    [key:string]: string|number
+  }
+}
+
 export interface appMainSettings {
   fontFamily?: fontTypes;
   themes?: colorTypes[];
   themeColors?: colorTypes;
   fontFamilies?: fontTypes[];
+  languages?:langInterface[];
+  lang?:langInterface
 }
+
+
