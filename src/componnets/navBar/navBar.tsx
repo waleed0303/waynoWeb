@@ -12,36 +12,45 @@ import {
 import { appSettings as _interface } from "../../utils/interfaces";
 import { Outlet, Link } from "react-router-dom";
 import { changeThemeColor, setTheme } from "../../app/appHelper";
+import { settingsUl, languageUl } from "./navBarHelper";
 
 const Navbar = () => {
   const appSettings: _interface.appMainSettings = useSelector(
     (state: any) => state.appSettings
   );
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [authDrop, setAuthDrop] = useState(false);
+  const [settingsDrop, setSettingsDrop] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const toggleDropdown = (section: any) => {
+  const authToggle = (section: any) => {
     setActiveLink(section);
-    setIsDropdownOpen(!isDropdownOpen);
+    setAuthDrop(!authDrop);
+    setSettingsDrop(false);
+  };
+  const toggleSettings = (section: any) => {
+    setActiveLink(section);
+    setSettingsDrop(!settingsDrop);
+    setAuthDrop(false);
   };
   const handleClick = (section: any) => {
     setActiveLink(section);
-    setIsDropdownOpen(false);
+    setAuthDrop(false);
+    setSettingsDrop(false);
     setIsOpen(!isOpen);
   };
-  useEffect(() => {
-    console.log("appSettings?.languages", appSettings?.languages);
-  }, [
-    appSettings?.fontFamily,
-    appSettings?.fontFamilies,
-    appSettings?.themeColors,
-    appSettings?.themes,
-    appSettings?.languages,
-    appSettings?.lang,
-  ]);
+  // useEffect(() => {
+  //   console.log("appSettings?.languages", appSettings?.languages);
+  // }, [
+  //   appSettings?.fontFamily,
+  //   appSettings?.fontFamilies,
+  //   appSettings?.themeColors,
+  //   appSettings?.themes,
+  //   appSettings?.languages,
+  //   appSettings?.lang,
+  // ]);
 
   return (
     <nav className={`${isOpen ? "navbar" : "navbar"}`}>
@@ -50,7 +59,8 @@ const Navbar = () => {
           src="https://images.wayno.ae/insecure/fit/150/92/sm/0/plain/https://runrunuae-assets.s3.me-central-1.amazonaws.com/Clientlogo/66cd80617f1c6.png"
           className="photo"
           width="150"
-          height="30"></img>
+          height="30"
+        ></img>
       </div>
 
       <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
@@ -58,7 +68,8 @@ const Navbar = () => {
           <Link
             to={`/`}
             className={activeLink === "home" ? "active normal" : "normal"}
-            onClick={() => handleClick("home")}>
+            onClick={() => handleClick("home")}
+          >
             HOME
           </Link>
         </li>
@@ -66,7 +77,8 @@ const Navbar = () => {
           <Link
             to={`courier`}
             className={activeLink === "courier" ? "active normal" : "normal"}
-            onClick={() => handleClick("courier")}>
+            onClick={() => handleClick("courier")}
+          >
             COURIER
           </Link>
         </li>
@@ -76,7 +88,8 @@ const Navbar = () => {
             className={
               activeLink === "recoveryPickup" ? "active normal" : "normal"
             }
-            onClick={() => handleClick("recoveryPickup")}>
+            onClick={() => handleClick("recoveryPickup")}
+          >
             RECOVERY & PICKUP
           </Link>
         </li>
@@ -84,31 +97,28 @@ const Navbar = () => {
           <Link
             to={`contact`}
             className={activeLink === "contact" ? "active normal" : "normal"}
-            onClick={() => handleClick("contact")}>
+            onClick={() => handleClick("contact")}
+          >
             Contact
           </Link>
         </li>
         <li>
           <a
-            href="#user"
-            className={activeLink === "user" ? "active " : ""}
-            onClick={() => toggleDropdown("user")}>
+            href="#auth"
+            className={activeLink === "auth" ? "active " : ""}
+            onClick={() => authToggle("auth")}
+          >
             <FaRegUserCircle size={20} />
-            {/* <span style={{ marginLeft: 5 }}>Account</span>{" "} */}
-            {/* {isDropdownOpen ? (
-              <FaChevronUp style={{ marginLeft: 5 }} />
-            ) : (
-              <FaChevronDown style={{ marginLeft: 5 }} />
-            )} */}
           </a>
 
-          {isDropdownOpen && (
-            <ul className="dropdown-content">
+          {authDrop && (
+            <ul className="authul">
               <li>
                 <Link
                   className={activeLink === "login" ? "active " : ""}
                   to={`signin`}
-                  onClick={() => handleClick("login")}>
+                  onClick={() => handleClick("login")}
+                >
                   Login
                 </Link>
               </li>
@@ -116,25 +126,10 @@ const Navbar = () => {
                 <Link
                   className={activeLink === "signup" ? "active " : ""}
                   to={`signup`}
-                  onClick={() => handleClick("signup")}>
+                  onClick={() => handleClick("signup")}
+                >
                   Signup
                 </Link>
-              </li>
-
-              <li className="nav-item dropdown">
-                <a href="#services">Services</a>
-                <ul className="dropdown-menu-left">
-                  {appSettings?.themes?.map((item: _interface.colorTypes) => {
-                    return (
-                      <li
-                        onClick={() => {
-                          changeThemeColor(item);
-                        }}>
-                        <a href="#web">{item?.name}</a>
-                      </li>
-                    );
-                  })}
-                </ul>
               </li>
             </ul>
           )}
@@ -142,30 +137,30 @@ const Navbar = () => {
         <li>
           <a
             href="#"
-            className={activeLink === "settings" ? "active normal" : "normal"}
-            onClick={() => handleClick("settings")}>
+            className={activeLink === "settings" ? "active" : ""}
+            onClick={() => toggleSettings("settings")}
+          >
             <FaTh style={{ marginLeft: 5 }} />
           </a>
-
-          <ul className="settings-drop">
-            {appSettings?.languages?.length !== null &&
-              appSettings?.languages?.length !== undefined &&
-              appSettings?.languages?.length > 0 &&
-              appSettings?.languages?.map((item: _interface.langInterface) => {
-                return (
-                  <li>
-                    <Link
-                      className={activeLink === "login" ? "active " : ""}
-                      to={`#`}
-                      onClick={() => handleClick("login")}>
-                      {item.name}
-                    </Link>
-                  </li>
-                );
-              })}
-          </ul>
+          {settingsDrop && (
+            <ul className="settingsul">
+              <li>
+                <Link className={"theme header"} to={`#`}>
+                  Theme
+                  {settingsUl(appSettings?.themes, activeLink, handleClick)}
+                </Link>
+                <li>
+                  <Link className={"lang header"} to={`#`}>
+                    Language
+                    {languageUl(appSettings?.languages, handleClick)}
+                  </Link>
+                </li>
+              </li>
+            </ul>
+          )}
         </li>
       </ul>
+
       {!isOpen ? (
         <div className="navbar-toggle" onClick={toggleMenu}>
           <span className="bar"></span>

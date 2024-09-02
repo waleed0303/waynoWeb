@@ -1,6 +1,12 @@
 import { appSettings as _interface } from "../utils/interfaces";
+import { useSelector } from "react-redux";
 import { colors, fonts, lang } from "../utils/staticText";
-import { updateFont, setApp, updateColor } from "../redux/slices/appSettings";
+import {
+  updateFont,
+  setApp,
+  updateColor,
+  updateLanguage,
+} from "../redux/slices/appSettings";
 // import {en} from "../assets/lang/eng";
 // import {ar} from "../assets/lang/ar";
 import * as en from "../assets/lang/eng";
@@ -8,7 +14,7 @@ import * as ar from "../assets/lang/ar";
 import store from "../redux/store";
 const { dispatch } = store;
 
-export const setTheme = (_font: any, _color: any) => {
+export const setTheme = (_font: any, _color: any, _lang: any) => {
   document.documentElement.style.setProperty("--app-font-bold", _font?.bold);
   document.documentElement.style.setProperty(
     "--app-font-semiBold",
@@ -79,25 +85,25 @@ export const setDefaultSettings = () => {
     colors?.secondaryTheme,
   ];
 
-  let langAll: _interface.langInterface[] = [
-    en?.en,
-    ar?.ar,
-  ];
+  let langAll: _interface.langInterface[] = [en?.en, ar?.ar];
   let appStyle: _interface.appMainSettings = {
     fontFamilies: fontFamilies,
     themes: themesAll,
-    languages:langAll
+    languages: langAll,
   };
   dispatch(setApp(appStyle));
 };
-export const changeThemeColor = (selColor:_interface.colorTypes) => {
+export const changeThemeColor = (selColor: _interface.colorTypes) => {
   dispatch(updateColor(selColor));
 };
-
-export const handleFontChange = (item: _interface.fontTypes) => {
-  dispatch(
-    updateFont({
-      fontFamily: item,
-    })
+export const changeLangAndFont = (selLang: _interface.langInterface) => {
+  console.log("selLang", selLang);
+  const state = store.getState();
+  const appSettings: _interface.appMainSettings = state?.appSettings;
+  dispatch(updateLanguage(selLang));
+  let newFont = appSettings?.fontFamilies?.find(
+    (item: _interface.fontTypes) => item?.id == selLang?.fontIdtoUse
   );
+  console.log("newFont", newFont);
+  dispatch(updateFont(newFont));
 };

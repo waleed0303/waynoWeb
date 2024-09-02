@@ -15,8 +15,13 @@ function App(router: any) {
   }, []);
 
   useMemo(() => {
-    setTheme(appSettings?.fontFamily, appSettings?.themeColors);
-  }, [appSettings?.fontFamily, appSettings?.themeColors]);
+    console.log("appSettings", appSettings);
+    setTheme(
+      appSettings?.fontFamily,
+      appSettings?.themeColors,
+      appSettings?.lang
+    );
+  }, [appSettings?.fontFamily, appSettings?.themeColors, appSettings?.lang]);
 
   return (
     <div className="">

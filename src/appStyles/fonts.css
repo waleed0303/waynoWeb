@@ -1,75 +1,52 @@
 @font-face {
-  font-family: "BoldFont";
+  font-family: "NotoBold";
   font-weight: 700;
-  src: url("../assets/fonts/SFProText-Bold.ttf");
+  src: url("../assets/fonts/NotoBold.ttf");
 }
 
 @font-face {
-  font-family: "SemiBold";
+  font-family: "NotoSemiBold";
   font-weight: 500;
-  src: url("../assets/fonts/SFProText-SemiBold.ttf");
+  src: url("../assets/fonts/NotoSemiBold.ttf");
 }
 
 @font-face {
-  font-family: "MediumFont";
+  font-family: "NotoMedium";
   font-weight: 400;
-  src: url("../assets/fonts/SFProText-Medium.ttf");
+  src: url("../assets/fonts/NotoMedium.ttf");
 }
 
 @font-face {
-  font-family: "Regularfont";
+  font-family: "NotoRegular";
   font-weight: 300;
-  src: url("../assets/fonts/SFProText-Regular.ttf");
+  src: url("../assets/fonts/NotoRegular.ttf");
 }
 
 @font-face {
-  font-family: "BoldArabic";
+  font-family: "SevBold";
   font-weight: 700;
-  src: url("../assets/fonts/Pacifico.ttf");
+  src: url("../assets/fonts/SevBold.ttf");
 }
 
 @font-face {
-  font-family: "SemiBoldArabic";
+  font-family: "SevSemiBold";
   font-weight: 500;
-  src: url("../assets/fonts/GreatVibes-Regular.otf");
+  src: url("../assets/fonts/SevSemiBold.ttf");
 }
 
 @font-face {
-  font-family: "MediumFontArabic";
+  font-family: "SevMedium";
   font-weight: 400;
-  src: url("../assets/fonts/SFProText-Medium.ttf");
+  src: url("../assets/fonts/SevMedium.ttf");
 }
 
 @font-face {
-  font-family: "RegularfontArabic";
+  font-family: "SevReg";
   font-weight: 300;
-  src: url("../assets/fonts/SFProText-Regular.ttf");
-}
-
-@font-face {
-  font-family: "BoldPoppins";
-  font-weight: 500;
-  src: url("../assets/fonts/Poppins-Bold.ttf");
-}
-@font-face {
-  font-family: "SemiBoldPoppins";
-  font-weight: 300;
-  src: url("../assets/fonts/Poppins-SemiBold.ttf");
-}
-@font-face {
-  font-family: "MediumFontPoppins";
-  font-weight: 200;
-  src: url("../assets/fonts/Poppins-Medium.ttf");
-}
-@font-face {
-  font-family: "RegularfontPoppins";
-  font-weight: 100;
-  src: url("../assets/fonts/Poppins-Regular.ttf");
+  src: url("../assets/fonts/SevReg.ttf");
 }
 
 body {
-  font-family: "MediumFont", "BoldFont", "SemiBold", "Regularfont", "BoldArabic",
-    "SemiBoldArabic", "MediumFontArabic", "RegularfontArabic",
-    "RegularfontPoppins", "RegularfontPoppins", "RegularfontPoppins",
-    "RegularfontPoppins";
+  font-family: "NotoBold", "NotoSemiBold", "NotoMedium", "NotoRegular",
+    "SevBold", "SevSemiBold", "SevMedium", "SevReg";
 }
