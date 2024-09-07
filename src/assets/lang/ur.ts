@@ -1,9 +1,9 @@
 import {langInterface} from "../../utils/interfaces/appSettings";
-const en:langInterface = {
-    id:0,
-    name:"English",
-    fontIdtoUse:2,
-    layout:"ltr",
+const ur:langInterface = {
+    id:2,
+    name:"Urdu",
+    fontIdtoUse:0,
+    layout:"rtl",
     readFrom:{
         navBarHome:"Home",
         navBarCourier:"Courier",
@@ -17,4 +17,4 @@ const en:langInterface = {
     }
 }
 
-export {en}; 
+export {ur}; 

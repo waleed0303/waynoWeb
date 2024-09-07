@@ -46,7 +46,34 @@
   src: url("../assets/fonts/SevReg.ttf");
 }
 
+
+
+@font-face {
+  font-family: "PopBold";
+  font-weight: 300;
+  src: url("../assets/fonts/PoppinsBold.ttf");
+}
+
+@font-face {
+  font-family: "PopSemiBold";
+  font-weight: 300;
+  src: url("../assets/fonts/PoppinsSemiBold.ttf");
+}
+
+@font-face {
+  font-family: "PopMedium";
+  font-weight: 300;
+  src: url("../assets/fonts/PoppinsMedium.ttf");
+}
+
+@font-face {
+  font-family: "PopRegular";
+  font-weight: 300;
+  src: url("../assets/fonts/PoppinsRegular.ttf");
+}
+
+
 body {
   font-family: "NotoBold", "NotoSemiBold", "NotoMedium", "NotoRegular",
-    "SevBold", "SevSemiBold", "SevMedium", "SevReg";
+    "SevBold", "SevSemiBold", "SevMedium", "SevReg", "PopBold", "PopSemiBold", "PopMedium", "PopRegular"
 }

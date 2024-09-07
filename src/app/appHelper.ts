@@ -7,10 +7,10 @@ import {
   updateColor,
   updateLanguage,
 } from "../redux/slices/appSettings";
-// import {en} from "../assets/lang/eng";
+import {en, ar, ur} from "../utils/staticText/lang";
 // import {ar} from "../assets/lang/ar";
-import * as en from "../assets/lang/eng";
-import * as ar from "../assets/lang/ar";
+// import * as en from "../assets/lang/eng";
+// import * as ar from "../assets/lang/ar";
 import store from "../redux/store";
 const { dispatch } = store;
 
@@ -79,13 +79,14 @@ export const setDefaultSettings = () => {
   let fontFamilies: _interface.fontTypes[] = [
     fonts?.primaryFont,
     fonts?.secondaryFont,
+    fonts?.poppingFont
   ];
   let themesAll: _interface.colorTypes[] = [
     colors?.primaryTheme,
     colors?.secondaryTheme,
   ];
 
-  let langAll: _interface.langInterface[] = [en?.en, ar?.ar];
+  let langAll: _interface.langInterface[] = [en?.en, ar?.ar, ur?.ur];
   let appStyle: _interface.appMainSettings = {
     fontFamilies: fontFamilies,
     themes: themesAll,

@@ -28,4 +28,18 @@ const secondaryFont: fontTypes = {
   },
 };
 
-export { primaryFont, secondaryFont };
+const poppingFont: fontTypes = {
+  id: 2,
+  bold: "PopBold",
+  semiBold: "PopSemiBold",
+  medium: "PopMedium",
+  regular: "PopRegular",
+  weight: {
+    bold: "700",
+    semiBold: "500",
+    medium: "400",
+    regular: "300",
+  },
+};
+
+export { primaryFont, secondaryFont, poppingFont };

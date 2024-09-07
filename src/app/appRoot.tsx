@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { appSettings as _interface } from "../utils/interfaces";
 import RootNavigator from "../navigator/rootNavigator/rootNavigator";
-import { setTheme, setDefaultSettings, handleFontChange } from "./appHelper";
+import { setTheme, setDefaultSettings } from "./appHelper";
 
 function App(router: any) {
   const appSettings: _interface.appMainSettings = useSelector(

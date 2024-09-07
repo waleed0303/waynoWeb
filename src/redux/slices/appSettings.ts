@@ -7,8 +7,8 @@ const initialState = <app.appMainSettings>{
   themes: [colors?.primaryTheme], //list of color themes objects
   themeColors: colors?.primaryTheme, //selected color object
 
-  fontFamily: fonts?.primaryFont, //selected font
-  fontFamilies: [fonts?.primaryFont], //list of fonts
+  fontFamily: fonts?.poppingFont, //selected font
+  fontFamilies: [fonts?.poppingFont], //list of fonts
 
   languages: [lang?.en?.en],
   lang: lang?.en?.en,
